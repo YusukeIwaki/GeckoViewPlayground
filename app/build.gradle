@@ -33,6 +33,9 @@ android {
         arm     { dimension "abi" }
         aarch64 { dimension "abi" }
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 repositories {
@@ -47,6 +50,11 @@ ext {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation project(':launcher_icon')
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:palette-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
 
     x86Implementation     "org.mozilla.geckoview:geckoview-${geckoviewChannel}-x86:${geckoviewVersion}"
     x86_64Implementation  "org.mozilla.geckoview:geckoview-${geckoviewChannel}-x86_64:${geckoviewVersion}"
